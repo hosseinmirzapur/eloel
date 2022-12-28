@@ -41,7 +41,7 @@ class EloelColumn extends Command
      */
     public function handle()
     {
-        $action = $this->choice('what action do you have on mind?', [
+        $action = $this->choice('what action do you have on mind', [
             'add-relation', 'remove-columns', 'column-type', 'rename-column'
         ]);
         switch ($action) {
@@ -85,12 +85,12 @@ class EloelColumn extends Command
      */
     protected function addRelation()
     {
-        $fromTable = $this->ask('Enter the name of the parent table:');
+        $fromTable = $this->ask('Enter the name of the parent table');
         $this->checkInput($fromTable);
-        $toTable = $this->ask('Enter the name of the child table:');
+        $toTable = $this->ask('Enter the name of the child table');
         $this->checkInput($toTable);
-        $relationColumn = $this->ask('Enter the column which is going to be referenced: (default is \'id\')', 'id');
-        $action = $this->choice('Action to  be taken for column: (default is \'cascade\')', ['cascade', 'restrict', 'set null'], 'cascade');
+        $relationColumn = $this->ask('Enter the column which is going to be referenced (default is \'id\')', 'id');
+        $action = $this->choice('Action to  be taken for column (default is \'cascade\')', ['cascade', 'restrict', 'set null'], 'cascade');
         $this->service->addRelation($fromTable, $toTable, $relationColumn, $action);
     }
 
@@ -101,9 +101,9 @@ class EloelColumn extends Command
      */
     protected function removeColumns()
     {
-        $table = $this->ask('Enter the name of desired table:');
+        $table = $this->ask('Enter the name of desired table');
         $this->checkInput($table);
-        $columns = $this->ask('Enter your desired columns separated by space:');
+        $columns = $this->ask('Enter your desired columns separated by space');
         $this->checkInput($columns);
         $separatedColumns = explode(' ', $columns);
         $this->service->removeColumns($table, $separatedColumns);
@@ -116,9 +116,9 @@ class EloelColumn extends Command
      */
     protected function columnType()
     {
-        $table = $this->ask('Enter the name of desired table:');
+        $table = $this->ask('Enter the name of desired table');
         $this->checkInput($table);
-        $column = $this->ask('Enter the desired column:');
+        $column = $this->ask('Enter the desired column');
         $this->checkInput($column);
         $this->service->columnType($table, $column);
     }
@@ -130,11 +130,11 @@ class EloelColumn extends Command
      */
     protected function renameColumn()
     {
-        $table = $this->ask('Enter the name of desired table:');
+        $table = $this->ask('Enter the name of desired table');
         $this->checkInput($table);
-        $fromName = $this->ask('Enter the name of the column you want to change:');
+        $fromName = $this->ask('Enter the name of the column you want to change');
         $this->checkInput($fromName);
-        $toName = $this->ask('Enter the name you desire your column to have:');
+        $toName = $this->ask('Enter the name you desire your column to have');
         $this->checkInput($toName);
         $this->service->renameColumn($table, $fromName, $toName);
     }

@@ -40,7 +40,7 @@ class EloelDatabase extends Command
      */
     public function handle()
     {
-        $dbName = $this->ask('Enter your desired database name:');
+        $dbName = $this->ask('Enter your desired database name');
         $this->checkInput($dbName);
         $this->handleDbCreation($dbName);
         $this->info('Command executed successfully');

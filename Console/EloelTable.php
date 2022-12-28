@@ -35,9 +35,9 @@ class EloelTable extends Command
      */
     public function handle()
     {
-        $table = $this->ask('Which table do you want to alter:');
+        $table = $this->ask('Which table do you want to alter');
         $this->checkInput($table);
-        $action = $this->choice('What action is on your mind?', ['rename', 'remove']);
+        $action = $this->choice('What action is on your mind', ['rename', 'remove']);
         $this->checkInput($action);
         $this->handleAction($action, $table);
         $this->info('Command executed successfully');
@@ -85,7 +85,7 @@ class EloelTable extends Command
      */
     protected function handleName($table)
     {
-        $name = $this->ask('What name do you choose for this table?');
+        $name = $this->ask('What name do you choose for this table');
         $this->checkInput($name);
         try {
             $this->service->renameTable($table, $name);
