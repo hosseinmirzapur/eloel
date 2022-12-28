@@ -1,23 +1,25 @@
 {
-    "name": "nwidart/eloel",
-    "description": "",
+    "name": "hosseinmirzapur/eloel",
+    "description": "Elegant Eloquent | Eloel",
+    "keywords": ["eloquent", "laravel", "eloel", "hosseinmirzapur", "console", "cli", "commands", "terminal", "elegant"],
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Hossein Mirzapur",
+            "email": "hosseinmirzapur@gmail.com"
         }
     ],
     "extra": {
         "laravel": {
-            "providers": [],
-            "aliases": {
-
-            }
+            "providers": [
+                "Modules\\Eloel\\Providers\\EloelServiceProvider"
+            ]
         }
     },
     "autoload": {
         "psr-4": {
             "Modules\\Eloel\\": ""
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "version": "1.0.0"
 }
