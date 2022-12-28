@@ -1,0 +1,14 @@
+{
+    "name": "Eloel",
+    "alias": "eloel",
+    "description": "Elegant Eloquent | Eloel",
+    "keywords": ["eloquent", "laravel", "eloel", "hosseinmirzapur", "console", "cli", "commands", "terminal", "elegant"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Eloel\\Providers\\EloelServiceProvider"
+    ],
+    "title": "Elegant Eloquent CLI",
+    "version": "1.0.0",
+    "compatibility": "dev",
+    "author": "Hossein Mirzapur"
+}
