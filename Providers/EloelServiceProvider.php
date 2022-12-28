@@ -33,7 +33,6 @@ class EloelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
         $this->registerCommands();
     }
 
@@ -54,15 +53,5 @@ class EloelServiceProvider extends ServiceProvider
             EloelTable::class,
             EloelDatabase::class
         ]);
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides(): array
-    {
-        return [];
     }
 }
